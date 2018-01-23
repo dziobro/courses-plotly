@@ -1,12 +1,54 @@
 ---
-title       : Getting Started With Plotly
-description : This chapter will introduce you to plotly and how you can use R and plotly together to create stunning data visualizations.
+title       : Getting Started With Data and dplyr
+description : This chapter will introduce you to R and dplyr and how to work with and process data.
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:7dc7c83d61
 ## Let's get started
 
-Meet Plotly. 
+dplyr is an R library that will allow us to work more efficently with data.
+R and R studio can be downloaded and allow local development of your projects.
+In this example we will use a Web Based enviroment to simplify getting started.
+All examples can be run locally in R with R studio.
 
+If you highlight a line of code you can run a single line and see the results.
+
+*** =instructions
+- Load the dplyr package.
+- Load the sample student data.
+- Click *Submit Answer* to run the code.
+
+*** =hint
+- use `library()` to load the dplyr package
+ 
+*** =pre_exercise_code
+```{r}
+
+```
+
+*** =sample_code
+```{r}
+# load the dplyr package
+
+# Load sample student data
+
+# Dump the student data
+```
+*** =solution
+```{r}
+# load the dplyr package
+library(dplyr)
+# Load sample student data
+
+# Dump the student data
+```
+*** =sct
+```{r}
+test_library_function("dplyr")
+
+test_error()
+success_msg("That was not that hard. Now it is time to work with that data.")
+```
+--- type:NormalExercise lang:r xp:100 skills:1 key:804e39053c
 [Plotly](https://plot.ly/) provides online graphing, analytics, and statistics tools. Using their technology anyone, including yourself, can make beautiful, interactive web-based graphs.
 
 In this short tutorial, you'll be introduced to the [R package for plotly](https://www.rdocumentation.org/packages/plotly/versions/4.5.2?), a high-level interface to the open source JavaScript graphing library plotly.js. 
@@ -58,7 +100,7 @@ success_msg("That was not that hard. Now it is time to create your very own plot
 
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:804e39053c
+--- type:NormalExercise lang:r xp:100 skills:1 key:a9ba121189
 ## Plotly diamonds are forever
 
 You'll use several datasets throughout the tutorial to showcase the power of plotly. In the next exercises you will make use of the [`diamond`](https://www.rdocumentation.org/packages/ggplot2/versions/2.1.0/topics/diamonds) dataset. A dataset containing the prices and other attributes of 1000 diamonds. 
