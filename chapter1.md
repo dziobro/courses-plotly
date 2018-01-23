@@ -30,16 +30,18 @@ If you highlight a line of code you can run a single line and see the results.
 # load the dplyr package
 
 # Load sample student data
-
+StudentData<-read.csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_1959/datasets/SampleClassData.csv")
 # Dump the student data
+StudentData
 ```
 *** =solution
 ```{r}
 # load the dplyr package
 library(dplyr)
 # Load sample student data
-
+StudentData<-read.csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_1959/datasets/SampleClassData.csv")
 # Dump the student data
+StudentData
 ```
 *** =sct
 ```{r}
@@ -47,6 +49,61 @@ test_library_function("dplyr")
 
 test_error()
 success_msg("That was not that hard. Now it is time to work with that data.")
+```
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:a8e82e24f1
+## Time to make the data tidy.
+In tidy data:
+- Each variable forms a column.
+- Each observation forms a row.
+- Each type of observational unit forms a table.
+
+We want to 
+
+
+*** =instructions
+## Let's Go!
+
+The student data is loaded into StudentData from the pervious exercise.
+1) load the tidyr libary.
+2) Gather the data into a new variable GatheredStudentData 
+3) Remove NA's
+
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+# load the dplyr package
+library(dplyr)
+StudentData<-read.csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_1959/datasets/SampleClassData.csv")
+
+```
+
+*** =sample_code
+```{r}
+#Load the tidyr library
+
+#Gather the data
+GatheredStudentData <-StudentData %>% gather(Indicator,Score, -SID,-First,-Last)
+
+# Remove NA's
+GatheredStudentData <- GatheredStudentData %>% na.omit()
+
+# Dump the student data
+glimpse(GatherdStudentData)
+
+#
+```
+
+*** =solution
+```{r}
+
+```
+
+*** =sct
+```{r}
+
 ```
 --- type:NormalExercise lang:r xp:100 skills:1 key:804e39053c
 [Plotly](https://plot.ly/) provides online graphing, analytics, and statistics tools. Using their technology anyone, including yourself, can make beautiful, interactive web-based graphs.
@@ -100,7 +157,7 @@ success_msg("That was not that hard. Now it is time to create your very own plot
 
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:a9ba121189
+--- type:NormalExercise lang:r xp:100 skills:1 key:75463b9466
 ## Plotly diamonds are forever
 
 You'll use several datasets throughout the tutorial to showcase the power of plotly. In the next exercises you will make use of the [`diamond`](https://www.rdocumentation.org/packages/ggplot2/versions/2.1.0/topics/diamonds) dataset. A dataset containing the prices and other attributes of 1000 diamonds. 
